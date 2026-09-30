@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: llama-stack-test1 
+  description: Llama Stack Agentic AI Workflow Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=llama-stack-test1  
+    janus-idp.io/tekton: llama-stack-test1 
+    backstage.io/kubernetes-id: llama-stack-test1 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: rh-ee-lyoon-dh/llama-stack-test1
+  tags: ["ai", "llama-stack", "langgraph", "mcp", "rag", "agents"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+
